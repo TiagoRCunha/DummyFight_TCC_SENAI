@@ -1,18 +1,34 @@
-import express from "express";
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import routes from './routes'
 
-import Cors from "./middleware/cors";
+class Server {
+  public express: express.Application
 
-const router = express.Router();
+  public constructor () {
+    this.express = express()
 
-router.use(Cors);
+    this.middlewares()
+    this.database()
+    this.routes()
+  }
 
-router.options("*", Cors);
+  private middlewares (): void {
+    this.express.use(express.json())
+    this.express.use(cors())
+  }
 
+  private database (): void {
+    mongoose.connect('mongodb://localhost:27017/test', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
+  }
 
-const server = express();
+  private routes (): void {
+    this.express.use(routes)
+  }
+}
 
-server.get("/", (_, res) => {
-  res.send("Hello ts-node!");
-});
-
-export default server;
+export default new Server().express
