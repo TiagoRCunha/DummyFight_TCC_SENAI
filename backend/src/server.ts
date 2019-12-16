@@ -1,3 +1,4 @@
+import env from '../config/api'
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
@@ -20,7 +21,7 @@ class Server {
   }
 
   private database (): void {
-    mongoose.connect('mongodb://localhost:27017/test', {
+    mongoose.connect(`${env.DB_ORN}${env.DB_COL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
