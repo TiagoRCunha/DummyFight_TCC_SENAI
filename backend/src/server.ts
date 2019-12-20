@@ -1,6 +1,6 @@
 import env from '../config/api'
 import express from 'express'
-import cors from 'cors'
+import corsConfig from './middleware/cors'
 import mongoose from 'mongoose'
 import routes from './routes'
 
@@ -17,7 +17,8 @@ class Server {
 
   private middlewares (): void {
     this.express.use(express.json())
-    this.express.use(cors())
+
+    this.express.use(corsConfig)
   }
 
   private database (): void {
