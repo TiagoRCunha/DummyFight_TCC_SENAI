@@ -1,13 +1,19 @@
-import cors from "cors";
-
-const options:cors.CorsOptions = {
-  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "X-Access-Token"],
+import cors from 'cors'
+// TODO testar se pode obter os dados de qualquer origem
+const options: cors.CorsOptions = {
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
   credentials: false,
-  methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
   origin: `*`,
-  preflightContinue: false
-};
+  preflightContinue: false,
+}
 
-const CorsOptions = cors(options);
+const CorsOptions = cors(options)
 
-export default CorsOptions;
+export default CorsOptions
