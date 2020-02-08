@@ -1,5 +1,5 @@
-import { Request, Response } from 'express'
-import User from '../schema/User'
+import { Request, Response, ErrorRequestHandler } from 'express'
+import User, { UserInterface } from '../schema/User'
 
 class UserController {
   // TODO testar se este metodo mostra somente um usuario
@@ -12,6 +12,7 @@ class UserController {
     const users = await User.find().where('deleted', !true)
 
     return res.json(users)
+    console.log(req)
   }
   // TODO testar se este metodo vai criar um usuario
   public async store(req: Request, res: Response): Promise<Response> {
@@ -21,20 +22,22 @@ class UserController {
   }
   // TODO testar se este metodo vai mudar o campo deleted para true
   public async destroy(req: Request, res: Response): Promise<Response> {
-    const user = await User.findOne({ _id: req.params.id }, (err, data) => {
-      // WARNING erro de compilação por causa do typescript
-      if (!data.deleted) {
-        data.deleted = true
-        data.save(err => {
-          console.log(
-            'Cannot update the field deleted from user because of: ',
-            err
-          )
-        })
-      } else {
-        console.log('Cannot access field of data: ', err)
+    const user = await User.findOne(
+      { _id: req.params.id },
+      (err: ErrorRequestHandler, data: UserInterface) => {
+        if (!data.deleted) {
+          data.deleted = true
+          data.save(err => {
+            console.log(
+              'Cannot update the field deleted from user because of: ',
+              err
+            )
+          })
+        } else {
+          console.log('Cannot access field of data: ', err)
+        }
       }
-    })
+    )
 
     return res.json(user)
   }

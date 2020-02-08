@@ -1,7 +1,13 @@
-import req from "supertest";
-import server from "./server";
+import req from 'supertest'
+import server from './server'
 
-test("[GET] /", async () => {
-  const res = await req(server).get("/");
-  expect(res.text).toBe("Hello ts-node!");
-});
+beforeAll(async () => {
+  console.log(' TDD with Jest')
+})
+
+describe(' SERVER: ', () => {
+  test('[GET] /', async () => {
+    const res = await req(server).get('/')
+    expect(res.body).toStrictEqual({ message: 'Ok' })
+  })
+})

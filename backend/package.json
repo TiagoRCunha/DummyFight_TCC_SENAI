@@ -6,11 +6,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/entry.ts",
-    "test": "jest --no-cache",
+    "test": "jest --no-cache --detectOpenHandles",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "prod": "yarn run build && node dist/entry.js"
   },
   "jest": {
+    "testEnvironment": "node",
     "transform": {
       "^.+\\.ts$": "ts-jest"
     },

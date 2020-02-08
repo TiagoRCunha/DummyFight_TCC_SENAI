@@ -20,7 +20,7 @@ class Server {
 
     this.express.use(corsConfig)
   }
-  // TODO testar se a API esta conectando com o banco
+
   private database(): void {
     mongoose.connect(`mongodb://${env.DB_ORN}:${env.DB_PORT}`, {
       useNewUrlParser: true,

@@ -1,11 +1,10 @@
-import { Router } from 'express'
+import { Router, Response } from 'express'
 import UserController from './controller/UserController'
 
 const routes = Router()
-// TODO testar se o servidor esta rodando
-routes.get('/', function(req, res) {
-  res.send('OK')
-  console.dir(res.headersSent)
+
+routes.get('/', (req, res: Response) => {
+  res.send({ message: 'Ok' })
 })
 routes.get('/users/:id', UserController.show)
 routes.get('/users/', UserController.index)
