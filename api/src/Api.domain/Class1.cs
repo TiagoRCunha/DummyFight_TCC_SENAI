@@ -1,0 +1,3 @@
+﻿namespace src.Api.domain
+{
+}
