@@ -13,5 +13,6 @@ export interface Character {
   attack: Number
   power: Number
   stamina: Number
+  image: String
   Id: String
 }
