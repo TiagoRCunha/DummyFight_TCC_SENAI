@@ -1,5 +1,5 @@
 import { Character } from './Character'
-import { Entity } from '../Shared'
+import { Entity } from '@domain/Shared'
 
 export interface User {
   name: String
