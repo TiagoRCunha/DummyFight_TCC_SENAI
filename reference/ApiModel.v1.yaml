@@ -168,4 +168,4 @@ paths:
 components:
   schemas:
     User:
-      $ref: ./models/User.v1.yaml
+      $ref: models/User.v1.yaml
