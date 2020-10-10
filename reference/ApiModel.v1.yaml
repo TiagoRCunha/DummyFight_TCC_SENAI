@@ -1,8 +1,8 @@
 openapi: 3.0.0
 tags:
-  - { name: endpoint }
-  - { name: apimodel }
-  - { name: schema }
+  - name: endpoint
+  - name: apimodel
+  - name: schema
 info:
   title: ApiModel
   version: '1.0'
@@ -32,7 +32,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ../frontend/src/mocks/models/User.v1.yaml
+                $ref: ./models/User.v1.yaml
               examples:
                 example-1:
                   value:
@@ -166,4 +166,6 @@ paths:
           name: id
       description: Get one user by id
 components:
-  schemas: {}
+  schemas:
+    User:
+      $ref: ./models/User.v1.yaml
