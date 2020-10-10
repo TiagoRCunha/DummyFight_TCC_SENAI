@@ -4,6 +4,28 @@ info:
   version: '1.0'
 servers:
   - url: 'http://localhost:5000'
-paths: {}
+paths:
+  '/users/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: GetUserById
+      tags:
+        - endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../frontend/src/mocks/models/User.v1.yaml
+        '404':
+          description: Created
+      operationId: get-users-id
+      parameters: []
 components:
   schemas: {}

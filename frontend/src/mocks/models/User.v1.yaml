@@ -1,4 +1,4 @@
-description: ''
+description: User schema
 type: object
 properties:
   id:
@@ -417,4 +417,4 @@ required:
   - character
   - points
 x-examples: {}
-title: GetUser
+title: User
