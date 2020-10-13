@@ -8,7 +8,7 @@ export interface Character {
   status: Status
   skills: Skills
   equipaments: Equipaments
-  potions: Potions
+  potions?: Potions
   defence: Number
   attack: Number
   power: Number

@@ -10,4 +10,4 @@ export interface User {
   points: Number
 }
 
-export class User extends Entity<User> {}
+// export class User extends Entity<User> {}

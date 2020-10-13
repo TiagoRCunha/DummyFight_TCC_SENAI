@@ -33,8 +33,8 @@
       "@modules/utils/*": ["src/modules/utils/*"],
       "@domain/Entities": ["src/domain/Entities"],
       "@domain/Entities/*": ["src/domain/Entities/*"],
-      "@domain/Adapters": ["src/domain/Adapters"],
-      "@domain/Adapters/*": ["src/domain/Adapters/*"],
+      "@domain/Mappers": ["src/domain/Mappers"],
+      "@domain/Mappers/*": ["src/domain/Mappers/*"],
       "@domain/Repository": ["src/domain/Repository"],
       "@domain/Repository/*": ["src/domain/Repository/*"],
       "@domain/Events": ["src/domain/Events"],
@@ -46,7 +46,9 @@
       "@theme": ["src/theme"],
       "@theme/*": ["src/theme/*"],
       "@domain": ["src/domain"],
-      "@domain/*": ["src/domain/*"]
+      "@domain/*": ["src/domain/*"],
+      "@mocks": ["src/mocks"],
+      "@mocks/*": ["src/mocks/*"]
     }
   },
   "include": ["src/"]

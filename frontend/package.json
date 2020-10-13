@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "apiGenerate": "npx @manifoldco/swagger-to-ts ../reference/ApiModel.v1.yaml --output ./src/mocks/*.ts"
   },
   "browserslist": {
     "production": [
