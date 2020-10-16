@@ -29,10 +29,9 @@ const renderApp = (Application: typeof App) => {
 renderApp(App)
 
 
-/* if (module.hot) {
+if (module.hot) {
   module.hot.accept('./pages/App', () => {
-
     const NextApp = require('./pages/App').default;
     renderApp(NextApp);
   });
-} */
+}
