@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "baseUrl": ".",
     "target": "es2015",
-    "lib": ["ES2015", "dom", "dom.iterable", "esnext"],
+    "lib": [
+      "ES2015",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,36 +26,11 @@
     "jsx": "react",
     "experimentalDecorators": true,
     "sourceMap": true,
-    "paths": {
-      "@modules/components": ["src/modules/components"],
-      "@modules/components/*": ["src/modules/components/*"],
-      "@modules/domain": ["src/modules/domain"],
-      "@modules/domain/*": ["src/modules/domain/*"],
-      "@modules/pages": ["src/modules/pages"],
-      "@modules/pages/*": ["src/modules/pages/*"],
-      "@modules/store": ["src/modules/store"],
-      "@modules/store/*": ["src/modules/store/*"],
-      "@modules/utils": ["src/modules/utils"],
-      "@modules/utils/*": ["src/modules/utils/*"],
-      "@domain/Entities": ["src/domain/Entities"],
-      "@domain/Entities/*": ["src/domain/Entities/*"],
-      "@domain/Mappers": ["src/domain/Mappers"],
-      "@domain/Mappers/*": ["src/domain/Mappers/*"],
-      "@domain/Repository": ["src/domain/Repository"],
-      "@domain/Repository/*": ["src/domain/Repository/*"],
-      "@domain/Events": ["src/domain/Events"],
-      "@domain/Events/*": ["src/domain/Events/*"],
-      "@domain/UseCases": ["src/domain/UseCases"],
-      "@domain/UseCases/*": ["src/domain/UseCases/*"],
-      "@domain/Shared": ["src/domain/Shared"],
-      "@domain/Shared/*": ["src/domain/Shared/*"],
-      "@theme": ["src/theme"],
-      "@theme/*": ["src/theme/*"],
-      "@domain": ["src/domain"],
-      "@domain/*": ["src/domain/*"],
-      "@mocks": ["src/mocks"],
-      "@mocks/*": ["src/mocks/*"]
-    }
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "include": ["src/"]
+  "include": [
+    "src/"
+  ]
 }
