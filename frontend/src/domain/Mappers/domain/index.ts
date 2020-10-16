@@ -1,1 +1,1 @@
-export * as UserToDomainMapping from './UserMapping'
+export { UserMapping as UserToDomainMapping } from './UserMapping'

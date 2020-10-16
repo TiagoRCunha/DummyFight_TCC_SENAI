@@ -1,6 +1,6 @@
-import { User } from '@domain/Entities'
+import { User } from '../../Entities'
 import { DomainMapper } from './DomainMapper'
-import { components } from '@mocks/UserApiModel'
+import { components } from '../../../mocks/UserApiModel'
 
 export class UserMapping
   implements DomainMapper<components['schemas']['User'], User> {

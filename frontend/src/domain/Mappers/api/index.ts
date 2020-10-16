@@ -1,1 +1,1 @@
-export * as UserToApiMapping from './UserMapping'
+export { UserMapping as UserToApiMapping } from './UserMapping'

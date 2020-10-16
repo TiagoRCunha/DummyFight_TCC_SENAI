@@ -1,5 +1,4 @@
-// import {} from '@domain/Mappers'
-import { User } from '@domain/Entities'
+import { User } from '../Entities'
 import mock from '../../mocks/version_01.json'
 
 export interface UserRepository {
