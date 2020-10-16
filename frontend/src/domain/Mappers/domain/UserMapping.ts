@@ -1,153 +1,155 @@
+import { components } from '../../../mocks/UserApiModel'
 import { User } from '../../Entities'
 import { DomainMapper } from './DomainMapper'
-import { components } from '../../../mocks/UserApiModel'
 
 export class UserMapping
   implements DomainMapper<components['schemas']['User'], User> {
   mapApiModelToDomain(user: components['schemas']['User']): User {
-    const armmoApiModel = user.character.equipaments.armmo
-    const beltApiModel = user.character.equipaments.belt
-    const bodyApiModel = user.character.equipaments.body
-    const feetApiModel = user.character.equipaments.feet
-    const handsApiModel = user.character.equipaments.hands
-    const headApiModel = user.character.equipaments.head
-    const legsApiModel = user.character.equipaments.legs
-    const neckApiModel = user.character.equipaments.neck
-    const primaryWeaponApiModel = user.character.equipaments.primaryWeapon
-    const secondWeaponApiModel = user.character.equipaments.secondWeapon
+    const {
+      attack,
+      defence,
+      equipaments,
+      experience,
+      firstname,
+      grade,
+      id,
+      image,
+      lastname,
+      power,
+      skills,
+      stamina,
+      status,
+      potions
+    } = user.character
+
+    const {
+      armmo,
+      belt,
+      body,
+      feet,
+      hands,
+      head,
+      legs,
+      neck,
+      primaryWeapon,
+      secondWeapon
+    } = equipaments
 
     const result: User = {
-      //_id: user.id,
       character: {
-        Id: user.character.id,
-        attack: user.character.attack,
-        defence: user.character.defence,
+        Id: id,
+        attack,
+        defence: defence,
         equipaments: {
-          armmo: { id: armmoApiModel },
+          armmo: { id: armmo },
           belt: {
-            defence: beltApiModel ? beltApiModel.defence : 0,
-            description: beltApiModel ? beltApiModel.description : '',
-            durability: beltApiModel ? beltApiModel.durability : 0,
-            fragmentSlot: beltApiModel ? beltApiModel.fragmentSlot : 0,
-            image: beltApiModel ? beltApiModel.image : '',
-            name: beltApiModel ? beltApiModel.name : '',
-            price: beltApiModel ? beltApiModel.price : 0,
-            tag: beltApiModel ? beltApiModel.tag : ''
+            defence: belt ? belt.defence : 0,
+            description: belt ? belt.description : '',
+            durability: belt ? belt.durability : 0,
+            fragmentSlot: belt ? belt.fragmentSlot : 0,
+            image: belt ? belt.image : '',
+            name: belt ? belt.name : '',
+            price: belt ? belt.price : 0,
+            tag: belt ? belt.tag : ''
           },
           body: {
-            defence: bodyApiModel ? bodyApiModel.defence : 0,
-            description: bodyApiModel ? bodyApiModel.description : '',
-            durability: bodyApiModel ? bodyApiModel.durability : 0,
-            fragmentSlot: bodyApiModel ? bodyApiModel.fragmentSlot : 0,
-            image: bodyApiModel ? bodyApiModel.image : '',
-            name: bodyApiModel ? bodyApiModel.name : '',
-            price: bodyApiModel ? bodyApiModel.price : 0,
-            tag: bodyApiModel ? bodyApiModel.tag : ''
+            defence: body ? body.defence : 0,
+            description: body ? body.description : '',
+            durability: body ? body.durability : 0,
+            fragmentSlot: body ? body.fragmentSlot : 0,
+            image: body ? body.image : '',
+            name: body ? body.name : '',
+            price: body ? body.price : 0,
+            tag: body ? body.tag : ''
           },
           feet: {
-            defence: feetApiModel ? feetApiModel.defence : 0,
-            description: feetApiModel ? feetApiModel.description : '',
-            durability: feetApiModel ? feetApiModel.durability : 0,
-            fragmentSlot: feetApiModel ? feetApiModel.fragmentSlot : 0,
-            image: feetApiModel ? feetApiModel.image : '',
-            name: feetApiModel ? feetApiModel.name : '',
-            price: feetApiModel ? feetApiModel.price : 0,
-            tag: feetApiModel ? feetApiModel.tag : ''
+            defence: feet ? feet.defence : 0,
+            description: feet ? feet.description : '',
+            durability: feet ? feet.durability : 0,
+            fragmentSlot: feet ? feet.fragmentSlot : 0,
+            image: feet ? feet.image : '',
+            name: feet ? feet.name : '',
+            price: feet ? feet.price : 0,
+            tag: feet ? feet.tag : ''
           },
           hands: {
-            defence: handsApiModel ? handsApiModel.defence : 0,
-            description: handsApiModel ? handsApiModel.description : '',
-            durability: handsApiModel ? handsApiModel.durability : 0,
-            fragmentSlot: handsApiModel ? handsApiModel.fragmentSlot : 0,
-            image: handsApiModel ? handsApiModel.image : '',
-            name: handsApiModel ? handsApiModel.name : '',
-            price: handsApiModel ? handsApiModel.price : 0,
-            tag: handsApiModel ? handsApiModel.tag : ''
+            defence: hands ? hands.defence : 0,
+            description: hands ? hands.description : '',
+            durability: hands ? hands.durability : 0,
+            fragmentSlot: hands ? hands.fragmentSlot : 0,
+            image: hands ? hands.image : '',
+            name: hands ? hands.name : '',
+            price: hands ? hands.price : 0,
+            tag: hands ? hands.tag : ''
           },
           head: {
-            defence: headApiModel ? headApiModel.defence : 0,
-            description: headApiModel ? headApiModel.description : '',
-            durability: headApiModel ? headApiModel.durability : 0,
-            fragmentSlot: headApiModel ? headApiModel.fragmentSlot : 0,
-            image: headApiModel ? headApiModel.image : '',
-            name: headApiModel ? headApiModel.name : '',
-            price: headApiModel ? headApiModel.price : 0,
-            tag: headApiModel ? headApiModel.tag : ''
+            defence: head ? head.defence : 0,
+            description: head ? head.description : '',
+            durability: head ? head.durability : 0,
+            fragmentSlot: head ? head.fragmentSlot : 0,
+            image: head ? head.image : '',
+            name: head ? head.name : '',
+            price: head ? head.price : 0,
+            tag: head ? head.tag : ''
           },
           legs: {
-            defence: legsApiModel ? legsApiModel.defence : 0,
-            description: legsApiModel ? legsApiModel.description : '',
-            durability: legsApiModel ? legsApiModel.durability : 0,
-            fragmentSlot: legsApiModel ? legsApiModel.fragmentSlot : 0,
-            image: legsApiModel ? legsApiModel.image : '',
-            name: legsApiModel ? legsApiModel.name : '',
-            price: legsApiModel ? legsApiModel.price : 0,
-            tag: legsApiModel ? legsApiModel.tag : ''
+            defence: legs ? legs.defence : 0,
+            description: legs ? legs.description : '',
+            durability: legs ? legs.durability : 0,
+            fragmentSlot: legs ? legs.fragmentSlot : 0,
+            image: legs ? legs.image : '',
+            name: legs ? legs.name : '',
+            price: legs ? legs.price : 0,
+            tag: legs ? legs.tag : ''
           },
           neck: {
-            defence: neckApiModel ? neckApiModel.defence : 0,
-            description: neckApiModel ? neckApiModel.description : '',
-            durability: neckApiModel ? neckApiModel.durability : 0,
-            fragmentSlot: neckApiModel ? neckApiModel.fragmentSlot : 0,
-            image: neckApiModel ? neckApiModel.image : '',
-            name: neckApiModel ? neckApiModel.name : '',
-            price: neckApiModel ? neckApiModel.price : 0,
-            tag: neckApiModel ? neckApiModel.tag : ''
+            defence: neck ? neck.defence : 0,
+            description: neck ? neck.description : '',
+            durability: neck ? neck.durability : 0,
+            fragmentSlot: neck ? neck.fragmentSlot : 0,
+            image: neck ? neck.image : '',
+            name: neck ? neck.name : '',
+            price: neck ? neck.price : 0,
+            tag: neck ? neck.tag : ''
           },
           primaryWeapon: {
-            defence: primaryWeaponApiModel ? primaryWeaponApiModel.defence : 0,
-            description: primaryWeaponApiModel
-              ? primaryWeaponApiModel.description
-              : '',
-            durability: primaryWeaponApiModel
-              ? primaryWeaponApiModel.durability
-              : 0,
-            fragmentSlot: primaryWeaponApiModel
-              ? primaryWeaponApiModel.fragmentSlot
-              : 0,
-            image: primaryWeaponApiModel ? primaryWeaponApiModel.image : '',
-            name: primaryWeaponApiModel ? primaryWeaponApiModel.name : '',
-            price: primaryWeaponApiModel ? primaryWeaponApiModel.price : 0,
-            tag: primaryWeaponApiModel ? primaryWeaponApiModel.tag : '',
-            attack: primaryWeaponApiModel ? primaryWeaponApiModel.attack : 0,
-            needArmmo: primaryWeaponApiModel
-              ? primaryWeaponApiModel.needArmmo
-              : false,
-            twoHanded: primaryWeaponApiModel
-              ? primaryWeaponApiModel.twoHanded
-              : false
+            defence: primaryWeapon ? primaryWeapon.defence : 0,
+            description: primaryWeapon ? primaryWeapon.description : '',
+            durability: primaryWeapon ? primaryWeapon.durability : 0,
+            fragmentSlot: primaryWeapon ? primaryWeapon.fragmentSlot : 0,
+            image: primaryWeapon ? primaryWeapon.image : '',
+            name: primaryWeapon ? primaryWeapon.name : '',
+            price: primaryWeapon ? primaryWeapon.price : 0,
+            tag: primaryWeapon ? primaryWeapon.tag : '',
+            attack: primaryWeapon ? primaryWeapon.attack : 0,
+            needArmmo: primaryWeapon ? primaryWeapon.needArmmo : false,
+            twoHanded: primaryWeapon ? primaryWeapon.twoHanded : false
           },
           secondWeapon: {
-            defence: secondWeaponApiModel ? secondWeaponApiModel.defence : 0,
-            description: secondWeaponApiModel
-              ? secondWeaponApiModel.description
-              : '',
-            durability: secondWeaponApiModel
-              ? secondWeaponApiModel.durability
-              : 0,
-            fragmentSlot: secondWeaponApiModel
-              ? secondWeaponApiModel.fragmentSlot
-              : 0,
-            image: secondWeaponApiModel ? secondWeaponApiModel.image : '',
-            name: secondWeaponApiModel ? secondWeaponApiModel.name : '',
-            price: secondWeaponApiModel ? secondWeaponApiModel.price : 0,
-            tag: secondWeaponApiModel ? secondWeaponApiModel.tag : '',
-            attack: secondWeaponApiModel ? secondWeaponApiModel.attack : 0
+            defence: secondWeapon ? secondWeapon.defence : 0,
+            description: secondWeapon ? secondWeapon.description : '',
+            durability: secondWeapon ? secondWeapon.durability : 0,
+            fragmentSlot: secondWeapon ? secondWeapon.fragmentSlot : 0,
+            image: secondWeapon ? secondWeapon.image : '',
+            name: secondWeapon ? secondWeapon.name : '',
+            price: secondWeapon ? secondWeapon.price : 0,
+            tag: secondWeapon ? secondWeapon.tag : '',
+            attack: secondWeapon ? secondWeapon.attack : 0
           }
         },
-        experience: user.character.experience,
-        firstname: user.character.firstname,
-        grade: user.character.grade,
-        image: user.character.image,
-        lastname: user.character.lastname,
+        experience: experience,
+        firstname: firstname,
+        grade: grade,
+        image: image,
+        lastname: lastname,
         potions: {
-          Id: user.character.potions ? user.character.potions.id : ''
+          Id: potions ? potions.id : ''
         },
-        power: user.character.power,
-        skills: user.character.skills,
-        stamina: user.character.stamina,
+        power: power,
+        skills: skills,
+        stamina: stamina,
         status: {
-          Id: user.character.status.id
+          Id: status.id
         }
       },
       email: user.email,

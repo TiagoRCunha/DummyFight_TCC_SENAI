@@ -1,5 +1,4 @@
 import { Character } from './Character'
-// import { Entity } from '../Shared'
 
 export interface User {
   name: String
@@ -9,5 +8,3 @@ export interface User {
   character: Character
   points: Number
 }
-
-// export class User extends Entity<User> {}
