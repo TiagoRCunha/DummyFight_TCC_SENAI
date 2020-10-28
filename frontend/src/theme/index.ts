@@ -24,15 +24,9 @@ export default createMuiTheme({
         width: '180px'
       }
     },
-    MuiTableHead: {
-      root: {
-        backgroundColor: '#E8EAF2'
-      }
-    },
-    MuiTableCell: {
-      head: {
-        fontSize: '1rem',
-        fontWeight: 'bold'
+    MuiTypography: {
+      h2: {
+        fontFamily: 'auto'
       }
     }
   }

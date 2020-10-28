@@ -10,4 +10,4 @@
  * @ref https://khalilstemmler.com/articles/typescript-domain-driven-design/ddd-frontend/
  */
 
-export const x = 1
+export { StatusHudComponentWithStyle as StatusHud } from './components'

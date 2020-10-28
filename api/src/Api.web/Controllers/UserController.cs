@@ -1,7 +1,7 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using src.Api.domain.Entity;
 using src.Api.persistence.Data;
-using System.Text.Encodings.Web;
 
 namespace src.Api.web.Controllers
 {
@@ -22,9 +22,15 @@ namespace src.Api.web.Controllers
     //
     // GET: /api/User
     [HttpGet]
-    public string Index()
+    public String Index()
     {
       return "Hello";
+    }
+
+    [HttpGet("{id}")]
+    public User FindUserById([FromServices] UserContext context, String id)
+    {
+      return context.Users.Find(id);
     }
 
     [HttpPost]

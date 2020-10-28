@@ -5,3 +5,5 @@
  * @author Tiago Rodrigues Cunha
  *
  */
+
+export const y = 2
