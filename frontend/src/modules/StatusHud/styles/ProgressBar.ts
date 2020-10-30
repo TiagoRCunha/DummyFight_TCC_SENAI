@@ -11,12 +11,10 @@ export const HealthLinearProgress = withStyles({
     // backgroundColor: '#f34423'
     backgroundColor: '#d00',
     boxShadow: '0 0 6px 2px rgba(255, 255, 255, 0.3) inset',
-    backgroundImage: `linear-gradient(-75deg, rgba(255, 255, 255, 0.35) 10%,
-        rgba(255, 255, 255, 0) 40%,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(255, 255, 255, 0.35) 50%,
-        rgba(255, 255, 255, 0.35) 75%,
-        rgba(255, 255, 255, 0) 74%,
+    backgroundImage: `linear-gradient(75deg, rgba(255, 255, 255, 0.35) 2%,
+        rgba(255, 255, 255, 0) 80%,
+        rgba(255, 255, 255, 0) 100%,
+        rgba(255, 255, 255, 0.35) 100%,
         rgba(255, 255, 255, 0))`
   }
 })(LinearProgress)

@@ -44,12 +44,26 @@ export const styles = (theme: Theme) =>
       transform: 'skewX(-35deg)',
       backgroundColor: 'darkgray'
     },
+    hpLow: {
+      width: '400px',
+      border: '1px solid red',
+      position: 'relative',
+      top: '4px',
+      height: '20px'
+    },
     healthBar: {
       width: '400px',
       border: '1px solid red',
       position: 'relative',
       top: '4px',
       height: '20px'
+    },
+    label: {
+      position: 'absolute',
+      top: 0,
+      left: '50%',
+      color: 'white ',
+      transform: 'skewX(35deg)'
     },
     expBarBackground: {
       width: '403px',

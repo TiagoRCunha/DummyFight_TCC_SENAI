@@ -1,5 +1,5 @@
 import { Box, Typography, withStyles, WithStyles } from '@material-ui/core';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ExpLinearProgress, HealthLinearProgress } from '../styles/ProgressBar';
 import { styles } from '../styles/StatusHud';
 
@@ -10,48 +10,48 @@ interface StatusHudProps extends Props {
   experience: number
 }
 
-function StatusHud(props: StatusHudProps) {
-  const [hitpointsValue, setHitpointsValue] = useState(props.hitpoints);
-  const [experienceValue, setExperienceValue] = useState(props.experience);
+function StatusHud({ classes, hitpoints, experience }: StatusHudProps) {
+  const [hitpointsValue, setHitpointsValue] = useState(hitpoints);
+  const [experienceValue, setExperienceValue] = useState(experience);
 
-  useCallback(() => {
+  useEffect(() => {
     setExperienceValue(50)
-    useEffect(() => {
 
-      setInterval(() => {
-
-        React.useEffect(() => {
-          if (hitpointsValue > 100) {
-            setHitpointsValue(0);
-          } else {
-            setHitpointsValue(hitpointsValue + 10);
-          }
-        });
-      }, 500);
-    })
-
-  }, [experienceValue, hitpointsValue])
+    const timer = setInterval(() => {
+      setHitpointsValue((oldProgress) =>
+        oldProgress >= 100 ? 0 : oldProgress + 5
+      );
+    }, 500);
+    return () => {
+      clearInterval(timer);
+    };
+  })
 
   return (
-    <Box className={props.classes.root}>
-      <Box className={props.classes.circleBackground}>
-        <Box className={props.classes.circleForeground}>
-          <Typography variant="h2" className={props.classes.lvlNumber}>99</Typography>
+    <Box className={classes.root}>
+      <Box className={classes.circleBackground}>
+        <Box className={classes.circleForeground}>
+          <Typography variant="h2" className={classes.lvlNumber}>99</Typography>
         </Box>
-        <Box className={props.classes.healthBarBackground}>
-          <Box className={props.classes.healthBar}>
+        <Box className={classes.healthBarBackground}>
+          <Box className={hitpointsValue > 20
+            ? classes.healthBar
+            : classes.hpLow}>
             <HealthLinearProgress
               variant="determinate"
               value={hitpointsValue}
             />
+            {/* TODO change '100' to the max value recevied from api */}
+            <Typography className={classes.label}>{hitpointsValue + '/ 100'}</Typography>
           </Box>
         </Box>
-        <Box className={props.classes.expBarBackground}>
-          <Box className={props.classes.expBar}>
+        <Box className={classes.expBarBackground}>
+          <Box className={classes.expBar}>
             <ExpLinearProgress
               variant="determinate"
               value={experienceValue}
             />
+            <Typography className={classes.label}>{experienceValue + '/ 100'}</Typography>
           </Box>
         </Box>
       </Box>

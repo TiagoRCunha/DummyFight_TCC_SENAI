@@ -1,23 +1,18 @@
-import { MuiThemeProvider } from '@material-ui/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Router } from 'react-router-dom';
 import history from './config/history';
 import App from './pages/App';
-import theme from "./theme";
 
 const root = document.getElementById('root')
 
 const renderApp = (Application: typeof App) => {
-
   ReactDOM.render(
     <AppContainer>
       <React.StrictMode>
         <Router history={history}>
-          <MuiThemeProvider theme={theme}>
-            <Application />
-          </MuiThemeProvider>
+          <Application />
         </Router>
       </React.StrictMode>
     </AppContainer>

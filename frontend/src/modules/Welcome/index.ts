@@ -10,4 +10,4 @@
  * @ref https://khalilstemmler.com/articles/typescript-domain-driven-design/ddd-frontend/
  */
 
-export { LoginAndRegisterComponent as LoginAndRegister } from './LoginAndRegister/components/Login'
+export { WelcomeComponentWithStyle as Welcome } from './components'

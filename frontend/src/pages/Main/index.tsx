@@ -1,35 +1,76 @@
-import { AppBar, Button, createStyles, Theme, Toolbar, useTheme, withStyles, WithStyles } from '@material-ui/core';
-import React from 'react';
+import { AppBar, Button, IconButton, Toolbar } from '@material-ui/core';
+import { createStyles, Theme, useTheme, withStyles, WithStyles } from '@material-ui/core/styles';
+import { Brightness5, Brightness7 } from '@material-ui/icons';
+import React, { useState } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
-import { RouteComponentProps } from 'react-router';
-import { StatusHud } from '../../modules/StatusHud';
+import { Route, Switch } from 'react-router-dom';
+// import { StatusHud } from '../../modules/StatusHud';
+import { LoginAndRegister } from '../../modules/User';
+import { Welcome } from '../../modules/Welcome';
 
 const styles = (theme: Theme) =>
   createStyles({
     appBar: {
       backgroundColor: theme.palette.primary.dark,
       maxHeight: "70px"
+    },
+    mainContainer: {
+      width: "100%",
+      backgroundColor: "dimgray",
+      boxSizing: "border-box",
+      position: 'absolute',
+      "& > div": {
+        margin: "8em auto",
+        maxWidth: "900px",
+      }
     }
   });
 
-type Props = WithStyles<typeof styles> & RouteComponentProps
+type Props = WithStyles<typeof styles>
 
-interface MainProps extends Props { }
+interface MainProps extends Props {
+  handleSwitch: () => void
+}
 
-function Main(props: MainProps) {
+function Main({ classes, handleSwitch }: MainProps) {
+  const [checked, setChecked] = useState(false);
   const theme = useTheme()
+
+  const toggleChecked = (event: React.MouseEvent) => {
+    event.stopPropagation()
+    setChecked((prev) => !prev);
+    handleSwitch();
+  };
 
   return (
     <SkeletonTheme
       color={theme.palette.grey[400]}
       highlightColor={theme.palette.grey[300]}
     >
-      <AppBar position="absolute" className={props.classes.appBar}>
+      <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
-          <StatusHud experience={50} hitpoints={50}></StatusHud>
+          {/* <StatusHud experience={50} hitpoints={50}></StatusHud> */}
           <Button color="inherit">Login</Button>
+          <Button variant="contained" color="inherit">Teste</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.contrastText }}>P contrast</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.dark }}>P Dark</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.light }}>P Light</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.contrastText }}>S contrast</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.dark }}>S dark</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.light }}>S light</Button>
+          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.main }}>S main</Button>
+          <IconButton color="secondary" onClick={toggleChecked} >
+            {checked ? <Brightness7 /> : <Brightness5 />}
+          </IconButton>
         </Toolbar>
       </AppBar>
+      <div className={classes.mainContainer}>
+        <Switch>
+          <Route path="/login" component={LoginAndRegister} />
+          <Route path="/register" component={LoginAndRegister} />
+          <Route path="/" exact component={Welcome} />
+        </Switch>
+      </div>
     </SkeletonTheme>
   )
 }
