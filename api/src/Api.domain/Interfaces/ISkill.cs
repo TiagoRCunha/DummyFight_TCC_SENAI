@@ -1,5 +1,5 @@
 namespace src.Api.domain.Interfaces
 {
-  public interface Skills
+  public interface ISkill
   { }
 }

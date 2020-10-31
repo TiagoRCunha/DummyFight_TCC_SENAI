@@ -8,9 +8,9 @@ namespace src.Api.domain.Interfaces
     String lastname { get; set; }
     String grade { get; set; }
     Int64 experience { get; set; }
-    Status status { get; set; }
-    Skills skills { get; set; }
-    Equipaments equipaments { get; set; }
+    IStatus status { get; set; }
+    ISkill skills { get; set; }
+    IEquipaments equipaments { get; set; }
     Potions potions { get; set; }
     Single defence { get; set; }
     Single attack { get; set; }

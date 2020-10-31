@@ -2,7 +2,7 @@ using System;
 
 namespace src.Api.domain.Interfaces
 {
-  public interface Weapon : IEntity
+  public interface Weapon
   {
     Int64 durability { get; }
     Int64 attack { get; set; }

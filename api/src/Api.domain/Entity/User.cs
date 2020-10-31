@@ -1,14 +1,16 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace src.Api.domain.Entity
 {
-  public class User
+  public class User : Entity
   {
-    String name { get; set; }
+    public String username { get; set; }
     String password { get; set; }
-    String tag { get; set; }
-    String email { get; set; }
-    Character character { get; set; }
-    Int64 points { get; set; }
+    public String tag { get; set; }
+    public String email { get; set; }
+    public Int64 points { get; set; }
+    [ForeignKey("character_id")]
+    public Character character { get; set; }
   }
 }

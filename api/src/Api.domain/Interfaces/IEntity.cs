@@ -4,6 +4,6 @@ namespace src.Api.domain.Interfaces
 {
   public interface IEntity
   {
-    String Id { get; set; }
+    String id { get; set; }
   }
 }
