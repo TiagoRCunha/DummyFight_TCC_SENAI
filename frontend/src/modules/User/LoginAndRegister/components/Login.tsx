@@ -40,14 +40,12 @@ function Login({ classes, match, history }: LoginProps) {
             <TextField
               className={classes.textField}
               required
-              color="secondary"
               label="Senha"
               type="password"
             />
             {routePath !== "/register" ?
               <FormControlLabel
                 className={classes.checkbox}
-                color="secondary"
                 control={<Checkbox name="rememberMe" />}
                 label="Lembre-se de mim"
               />
@@ -56,20 +54,18 @@ function Login({ classes, match, history }: LoginProps) {
                 <TextField
                   className={classes.textField}
                   required
-                  color="secondary"
                   label="Repita a senha"
                   type="password"
                 />
                 <TextField
                   className={classes.textField}
                   required
-                  color="secondary"
+
                   label="Email"
                   type="email"
                 />
                 <FormControlLabel
                   className={classes.checkbox}
-                  color="secondary"
                   control={<Checkbox name="terms" />}
                   label="Aceitar termos de contrato"
                 />

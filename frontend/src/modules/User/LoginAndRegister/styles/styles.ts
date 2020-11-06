@@ -17,8 +17,7 @@ export const styles = (theme: Theme) =>
       margin: 'auto'
     },
     checkbox: {
-      paddingTop: '5px',
-      color: theme.palette.text.primary
+      paddingTop: '5px'
     },
     textField: {
       width: '100%',

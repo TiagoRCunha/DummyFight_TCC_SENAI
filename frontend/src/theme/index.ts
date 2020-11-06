@@ -20,10 +20,6 @@ const mixing: ThemeOptions = {
 
 export const defaultTheme = createMuiTheme({
   palette: {
-    text: {
-      primary: '#7F9FD2',
-      secondary: '#fff'
-    },
     primary: {
       light: '#4f5b62',
       main: '#263238',

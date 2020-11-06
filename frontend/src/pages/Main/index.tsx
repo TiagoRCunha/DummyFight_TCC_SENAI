@@ -16,7 +16,7 @@ const styles = (theme: Theme) =>
     },
     mainContainer: {
       width: "100%",
-      backgroundColor: "dimgray",
+      backgroundColor: theme.palette.grey[400],
       boxSizing: "border-box",
       position: 'absolute',
       "& > div": {
@@ -48,18 +48,10 @@ function Main({ classes, handleSwitch }: MainProps) {
       highlightColor={theme.palette.grey[300]}
     >
       <AppBar position="absolute" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar >
           {/* <StatusHud experience={50} hitpoints={50}></StatusHud> */}
           <Button color="inherit">Login</Button>
-          <Button variant="contained" color="inherit">Teste</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.contrastText }}>P contrast</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.dark }}>P Dark</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.primary.light }}>P Light</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.contrastText }}>S contrast</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.dark }}>S dark</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.light }}>S light</Button>
-          <Button variant="contained" style={{ backgroundColor: theme.palette.secondary.main }}>S main</Button>
-          <IconButton color="secondary" onClick={toggleChecked} >
+          <IconButton color="default" onClick={toggleChecked} >
             {checked ? <Brightness7 /> : <Brightness5 />}
           </IconButton>
         </Toolbar>
