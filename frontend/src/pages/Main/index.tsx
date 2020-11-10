@@ -1,12 +1,24 @@
-import { AppBar, Grid, IconButton, Link, LinkProps, List, ListItem, ListItemText, ListSubheader, Toolbar, Typography } from '@material-ui/core';
+import {
+  AppBar,
+  Grid,
+  IconButton,
+  Link,
+  LinkProps,
+  List,
+  ListItem,
+  ListItemText,
+  ListSubheader,
+  Toolbar,
+  Typography
+} from '@material-ui/core';
 import { useTheme, withStyles, WithStyles } from '@material-ui/core/styles';
 import { Brightness5, Brightness7 } from '@material-ui/icons';
+// import { StatusHud } from '@modules/StatusHud';
+import { LoginAndRegister } from '@modules/User';
+import { Welcome } from '@modules/Welcome';
 import React, { useState } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import { Route, Switch } from 'react-router-dom';
-// import { StatusHud } from '../../modules/StatusHud';
-import { LoginAndRegister } from '../../modules/User';
-import { Welcome } from '../../modules/Welcome';
 import { styles } from './styles';
 
 type Props = WithStyles<typeof styles>

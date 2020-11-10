@@ -1,8 +1,8 @@
 import { Typography } from '@material-ui/core';
 import { withStyles, WithStyles } from '@material-ui/core/styles';
+import { CustomContainer } from '@modules/utils/CustomContainer';
 import React from 'react';
-import { CustomContainer } from '../../utils/CustomContainer';
-import { styles } from '../styles/Welcome';
+import { styles } from '../styles/styles';
 
 type Props = WithStyles<typeof styles>
 

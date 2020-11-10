@@ -1,9 +1,9 @@
 import { MuiThemeProvider } from '@material-ui/core'
+import Main from '@pages/Main'
+import NotFound from '@pages/NotFound'
+import { defaultTheme, lightTheme } from '@theme'
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { defaultTheme, lightTheme } from '../theme'
-import Main from './Main'
-import NotFound from './NotFound'
 
 
 export default function App() {

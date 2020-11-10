@@ -28,7 +28,35 @@
     "sourceMap": true,
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "@config": ["src/config"],
+      "@config/*": ["src/config/*"],
+      "@domain": ["src/domain"],
+      "@domain/*": ["src/domain/*"],
+      "@mocks": ["src/mocks"],
+      "@mocks/*": ["src/mocks/*"],
+      "@modules": ["src/modules"],
+      "@modules/*": ["src/modules/*"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@theme": ["src/theme"],
+      "@theme/*": ["src/theme/*"],
+      "@domain/Entities": ["src/domain/Entities"],
+      "@domain/Entities/*": ["src/domain/Entities/*"],
+      "@domain/Events": ["src/domain/Events"],
+      "@domain/Events/*": ["src/domain/Events/*"],
+      "@domain/Mappers": ["src/domain/Mappers"],
+      "@domain/Mappers/*": ["src/domain/Mappers/*"],
+      "@domain/Repository": ["src/domain/Repository"],
+      "@domain/Repository/*": ["src/domain/Repository/*"],
+      "@domain/Shared": ["src/domain/Shared"],
+      "@domain/Shared/*": ["src/domain/Shared/*"],
+      "@domain/UseCases": ["src/domain/UseCases"],
+      "@domain/UseCases/*": ["src/domain/UseCases/*"]
+    }
   },
   "include": [
     "src/"

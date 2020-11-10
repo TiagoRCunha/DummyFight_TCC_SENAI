@@ -61,7 +61,22 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@config': resolve(ROOT, 'src/config'),
+      '@domain': resolve(ROOT, 'src/domain'),
+      '@mocks': resolve(ROOT, 'src/mocks'),
+      '@modules': resolve(ROOT, 'src/modules'),
+      '@pages': resolve(ROOT, 'src/pages'),
+      '@store': resolve(ROOT, 'src/store'),
+      '@theme': resolve(ROOT, 'src/theme'),
+      '@domain/Entities': resolve(ROOT, 'src/domain/Entities'),
+      '@domain/Events': resolve(ROOT, 'src/domain/Events'),
+      '@domain/Mappers': resolve(ROOT, 'src/domain/Mappers'),
+      '@domain/Repository': resolve(ROOT, 'src/domain/Repository'),
+      '@domain/Shared': resolve(ROOT, 'src/domain/Shared'),
+      '@domain/UseCases': resolve(ROOT, 'src/domain/UseCases')
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),

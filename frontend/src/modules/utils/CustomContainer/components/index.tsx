@@ -1,7 +1,7 @@
 import { Box, Paper, PaperProps } from '@material-ui/core';
 import { withStyles, WithStyles } from '@material-ui/core/styles';
 import React from 'react';
-import { styles } from '../styles/CustomContainer';
+import { styles } from '../styles/styles';
 
 type Props = WithStyles<typeof styles> & PaperProps
 
