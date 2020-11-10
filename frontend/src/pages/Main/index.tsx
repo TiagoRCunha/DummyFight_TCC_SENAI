@@ -1,5 +1,5 @@
-import { AppBar, Button, IconButton, Toolbar } from '@material-ui/core';
-import { createStyles, Theme, useTheme, withStyles, WithStyles } from '@material-ui/core/styles';
+import { AppBar, Grid, IconButton, Link, LinkProps, List, ListItem, ListItemText, ListSubheader, Toolbar, Typography } from '@material-ui/core';
+import { useTheme, withStyles, WithStyles } from '@material-ui/core/styles';
 import { Brightness5, Brightness7 } from '@material-ui/icons';
 import React, { useState } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
@@ -7,24 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 // import { StatusHud } from '../../modules/StatusHud';
 import { LoginAndRegister } from '../../modules/User';
 import { Welcome } from '../../modules/Welcome';
-
-const styles = (theme: Theme) =>
-  createStyles({
-    appBar: {
-      backgroundColor: theme.palette.primary.dark,
-      maxHeight: "70px"
-    },
-    mainContainer: {
-      width: "100%",
-      backgroundColor: theme.palette.grey[400],
-      boxSizing: "border-box",
-      position: 'absolute',
-      "& > div": {
-        margin: "8em auto",
-        maxWidth: "900px",
-      }
-    }
-  });
+import { styles } from './styles';
 
 type Props = WithStyles<typeof styles>
 
@@ -42,15 +25,19 @@ function Main({ classes, handleSwitch }: MainProps) {
     handleSwitch();
   };
 
+  function ListItemLink(props: LinkProps) {
+    return <ListItem button component="a" {...props} />;
+  }
+
   return (
     <SkeletonTheme
       color={theme.palette.grey[400]}
       highlightColor={theme.palette.grey[300]}
     >
-      <AppBar position="absolute" className={classes.appBar}>
+      <AppBar className={classes.appBar}>
         <Toolbar >
           {/* <StatusHud experience={50} hitpoints={50}></StatusHud> */}
-          <Button color="inherit">Login</Button>
+          <Link href="/login" variant="button" color="inherit">Login</Link>
           <IconButton color="default" onClick={toggleChecked} >
             {checked ? <Brightness7 /> : <Brightness5 />}
           </IconButton>
@@ -63,6 +50,55 @@ function Main({ classes, handleSwitch }: MainProps) {
           <Route path="/" exact component={Welcome} />
         </Switch>
       </div>
+      <footer className={classes.footer}>
+        <Grid className={classes.gridContainer} container justify="center" spacing={5}>
+          <Grid item lg={3}>
+            <List>
+              <ListSubheader color="default" inset component="h5">Parceiros</ListSubheader>
+              <ListItemLink target="_blank" href="https://senaies.com.br/">
+                <ListItemText secondary="SENAI" inset />
+              </ListItemLink>
+              <ListItemLink target="_blank" href="https://findes.com.br/">
+                <ListItemText secondary="FINDES" inset />
+              </ListItemLink>
+            </List>
+          </Grid>
+          <Grid item lg={3}>
+            <List>
+              <ListSubheader color="default" inset component="h5">Sobre</ListSubheader>
+              <ListItemLink>
+                <ListItemText inset secondary="Contribuir" />
+              </ListItemLink>
+              <ListItemLink>
+                <ListItemText inset secondary="Apectos técnicos" />
+              </ListItemLink>
+              <ListItemLink>
+                <ListItemText inset secondary="Visão do Produto" />
+              </ListItemLink>
+            </List>
+          </Grid>
+          <Grid item lg={3}>
+            <List>
+              <ListSubheader color="default" inset component="h5">Contato</ListSubheader>
+              <ListItemLink>
+                <ListItemText inset secondary="Twitter" />
+              </ListItemLink>
+              <ListItemLink>
+                <ListItemText inset secondary="Email" />
+              </ListItemLink>
+              <ListItemLink>
+                <ListItemText inset secondary="Github" />
+              </ListItemLink>
+              <ListItemLink>
+                <ListItemText inset secondary="Linkedin" />
+              </ListItemLink>
+            </List>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography color="textPrimary" >&copy; 2020 Tiago Rodrigues Cunha | Versão 1</Typography>
+          </Grid>
+        </Grid>
+      </footer>
     </SkeletonTheme>
   )
 }

@@ -1,5 +1,9 @@
 import { createMuiTheme, ThemeOptions } from '@material-ui/core'
 
+const customFont = {
+  fontFamily: '"Caveat Brush", cursive, Roboto'
+}
+
 const mixing: ThemeOptions = {
   overrides: {
     MuiFab: {
@@ -9,12 +13,10 @@ const mixing: ThemeOptions = {
       extended: {
         width: '180px'
       }
-    },
-    MuiTypography: {
-      h2: {
-        fontFamily: 'auto'
-      }
     }
+  },
+  typography: {
+    allVariants: customFont
   }
 }
 
@@ -40,7 +42,8 @@ export const defaultTheme = createMuiTheme({
     },
     type: 'dark'
   },
-  overrides: mixing.overrides
+  overrides: mixing.overrides,
+  typography: mixing.typography
 })
 
 export const lightTheme = createMuiTheme({
@@ -61,5 +64,6 @@ export const lightTheme = createMuiTheme({
     },
     type: 'light'
   },
-  overrides: mixing.overrides
+  overrides: mixing.overrides,
+  typography: mixing.typography
 })
