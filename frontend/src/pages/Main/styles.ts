@@ -4,7 +4,8 @@ export const styles = (theme: Theme) =>
   createStyles({
     appBar: {
       backgroundColor: theme.palette.primary.dark,
-      maxHeight: '70px'
+      maxHeight: '70px',
+      color: theme.palette.secondary.contrastText
     },
     mainContainer: {
       width: '100%',
@@ -27,6 +28,9 @@ export const styles = (theme: Theme) =>
       flexGrow: 1,
       margin: 0,
       width: '100%',
+      '& *': {
+        color: theme.palette.text.primary
+      },
       '& h5': theme.typography.h5
     }
   })

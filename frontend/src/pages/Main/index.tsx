@@ -35,10 +35,10 @@ function Main({ classes, handleSwitch }: MainProps) {
       highlightColor={theme.palette.grey[300]}
     >
       <AppBar className={classes.appBar}>
-        <Toolbar >
+        <Toolbar>
           {/* <StatusHud experience={50} hitpoints={50}></StatusHud> */}
           <Link href="/login" variant="button" color="inherit">Login</Link>
-          <IconButton color="default" onClick={toggleChecked} >
+          <IconButton color="inherit" onClick={toggleChecked} >
             {checked ? <Brightness7 /> : <Brightness5 />}
           </IconButton>
         </Toolbar>
@@ -54,7 +54,7 @@ function Main({ classes, handleSwitch }: MainProps) {
         <Grid className={classes.gridContainer} container justify="center" spacing={5}>
           <Grid item lg={3}>
             <List>
-              <ListSubheader color="default" inset component="h5">Parceiros</ListSubheader>
+              <ListSubheader inset component="h5">Parceiros</ListSubheader>
               <ListItemLink target="_blank" href="https://senaies.com.br/">
                 <ListItemText secondary="SENAI" inset />
               </ListItemLink>
@@ -65,7 +65,7 @@ function Main({ classes, handleSwitch }: MainProps) {
           </Grid>
           <Grid item lg={3}>
             <List>
-              <ListSubheader color="default" inset component="h5">Sobre</ListSubheader>
+              <ListSubheader inset component="h5">Sobre</ListSubheader>
               <ListItemLink>
                 <ListItemText inset secondary="Contribuir" />
               </ListItemLink>
@@ -79,7 +79,7 @@ function Main({ classes, handleSwitch }: MainProps) {
           </Grid>
           <Grid item lg={3}>
             <List>
-              <ListSubheader color="default" inset component="h5">Contato</ListSubheader>
+              <ListSubheader inset component="h5">Contato</ListSubheader>
               <ListItemLink>
                 <ListItemText inset secondary="Twitter" />
               </ListItemLink>
