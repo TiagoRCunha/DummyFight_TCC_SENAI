@@ -16,15 +16,15 @@ function StatusHud({ classes, hitpoints, experience }: StatusHudProps) {
 
   useEffect(() => {
     setExperienceValue(50)
-
-    const timer = setInterval(() => {
-      setHitpointsValue((oldProgress) =>
-        oldProgress >= 100 ? 0 : oldProgress + 5
-      );
-    }, 500);
-    return () => {
-      clearInterval(timer);
-    };
+    setHitpointsValue(50)
+    /*     const timer = setInterval(() => {
+          setHitpointsValue((oldProgress) =>
+            oldProgress >= 100 ? 0 : oldProgress + 5
+          );
+        }, 500);
+        return () => {
+          clearInterval(timer);
+        }; */
   })
 
   return (

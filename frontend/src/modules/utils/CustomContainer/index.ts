@@ -1,5 +1,5 @@
 /*
- * This directory is the welcome module, when user arent logged
+ * This directory is the utils and shared modules
  *
  * Components: UI and Logic UI
  * Services: fetch data
@@ -10,4 +10,4 @@
  * @ref https://khalilstemmler.com/articles/typescript-domain-driven-design/ddd-frontend/
  */
 
-export { WelcomeComponentWithStyle as Welcome } from './components'
+export { CustomContainerComponentWithStyle as CustomContainer } from './components'
