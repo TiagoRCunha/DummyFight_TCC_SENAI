@@ -5,28 +5,29 @@ import borderRococoImage from '../../../assets/boder-rococo-example.png'
 export const styles = (theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1
-      // borderImage: `url(${teste}) 40% 42% / 1 round `
+      flexGrow: 1,
+      backgroundColor: theme.palette.primary.light
     },
     header: {
       padding: '25px',
       backgroundSize: 'contain',
-      backgroundColor: theme.palette.primary.light,
       backgroundImage: `url(${borderRococoImage})`,
       backgroundRepeat: 'round',
+      backgroundColor: 'inherit',
       backgroundBlendMode: 'multiply',
       transform: 'scaleY(-1)'
     },
     footer: {
       padding: '25px',
       backgroundSize: 'contain',
-      backgroundColor: theme.palette.primary.light,
       backgroundImage: `url(${borderRococoImage})`,
       backgroundRepeat: 'round',
+      backgroundColor: 'inherit',
       backgroundBlendMode: 'multiply'
     },
     body: {
-      backgroundColor: theme.palette.primary.light,
+      borderLeft: '4px solid transparent',
+      borderRight: '4px solid transparent',
       color: theme.palette.text.primary
     }
   })
