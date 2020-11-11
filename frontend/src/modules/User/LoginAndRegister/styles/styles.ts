@@ -5,7 +5,10 @@ export const styles = (theme: Theme) =>
     root: {
       minWidth: '45em',
       margin: 'auto',
-      backgroundColor: theme.palette.primary.light
+      backgroundColor: theme.palette.primary.light,
+      '& *': {
+        color: theme.palette.text.primary
+      }
     },
     buttons: {
       margin: 'auto',
@@ -14,7 +17,13 @@ export const styles = (theme: Theme) =>
     },
     form: {
       width: '20em',
-      margin: 'auto'
+      margin: 'auto',
+      '& .MuiInput-underline:before': {
+        borderBottomColor: theme.palette.text.secondary
+      },
+      '& .Mui-focused': {
+        color: theme.palette.text.primary
+      }
     },
     checkbox: {
       paddingTop: '5px'

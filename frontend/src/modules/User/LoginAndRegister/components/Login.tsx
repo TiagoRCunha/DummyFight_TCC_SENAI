@@ -60,7 +60,6 @@ function Login({ classes, match, history }: LoginProps) {
                 <TextField
                   className={classes.textField}
                   required
-
                   label="Email"
                   type="email"
                 />
