@@ -26,7 +26,7 @@ export const styles = (theme: Theme) =>
       }
     },
     checkbox: {
-      paddingTop: '5px'
+      paddingTop: '15px'
     },
     textField: {
       width: '100%',
