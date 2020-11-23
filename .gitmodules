@@ -1,0 +1,9 @@
+[submodule "DummyFight_Documentation"]
+	path = DummyFight_Documentation
+	url = https://github.com/TiagoRCunha/DummyFight_Documentation.git
+[submodule "DummyFight_Api"]
+	path = DummyFight_Api
+	url = https://github.com/TiagoRCunha/DummyFight_Api.git
+[submodule "DummyFight_Frontend"]
+	path = DummyFight_Frontend
+	url = https://github.com/TiagoRCunha/DummyFight_Frontend.git
