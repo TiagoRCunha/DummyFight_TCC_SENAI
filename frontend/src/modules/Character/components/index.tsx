@@ -10,11 +10,11 @@ interface CharacterProps extends Props {
   handleFakeLogin: () => void
 }
 
-function Character({ classes, match, handleFakeLogin }: CharacterProps) {
+function Character({ classes, history, handleFakeLogin }: CharacterProps) {
 
-  const routePath = match.path;
+  console.log("history in character component", history)
 
-  if (routePath) {
+  if (history) {
     handleFakeLogin()
   }
 

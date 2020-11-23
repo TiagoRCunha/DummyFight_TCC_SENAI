@@ -56,9 +56,9 @@ function Main({ classes, handleSwitch }: MainProps) {
           <Route path="/login" component={LoginAndRegister} />
           <Route path="/register" component={LoginAndRegister} />
           <Route path="/" exact component={Welcome} />
-          <Route path="/user/:id">
-            <Character handleFakeLogin={() => fakeLogin(true)} />
-          </Route>
+          <Route path="/user" render={props => (
+            <Character {...props} handleFakeLogin={() => fakeLogin(true)} />
+          )} />
         </Switch>
       </div>
       <Footer />
