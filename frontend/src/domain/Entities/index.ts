@@ -1,6 +1,0 @@
-export * from './Character'
-export * from './Equipaments'
-export * from './Potions'
-export * from './Skills'
-export * from './Status'
-export * from './User'
